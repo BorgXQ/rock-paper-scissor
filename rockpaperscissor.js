@@ -1,34 +1,35 @@
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3 + 1);
     if (choice === 1) {
-        return "rock"
+        return "rock";
     } else if (choice === 2) {
-        return "paper"
+        return "paper";
     } else {
-        return "scissor"
+        return "scissor";
     }
 }
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === computerSelection) {
-        console.log("It's a draw!");
+        return "It's a draw!";
     } else if (playerSelection.toLowerCase() === "rock") {
         if (computerSelection === "paper") {
-            console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
+            return `You Lose! ${computerSelection} beats ${playerSelection}!`;
         } else {
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
+            return `You Win! ${playerSelection} beats ${computerSelection}!`;
         }
     } else if (playerSelection.toLowerCase() === "paper") {
         if (computerSelection === "scissor") {
-            console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
+            return `You Lose! ${computerSelection} beats ${playerSelection}!`;
         } else {
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
+            return `You Win! ${playerSelection} beats ${computerSelection}!`;
         }
     } else if (playerSelection.toLowerCase() === "scissor") {
         if (computerSelection === "rock") {
-            console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
+            return `You Lose! ${computerSelection} beats ${playerSelection}!`;
         } else {
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
+            return `You Win! ${playerSelection} beats ${computerSelection}!`;
         }
     }
 }
+
