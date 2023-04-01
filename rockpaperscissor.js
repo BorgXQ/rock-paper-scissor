@@ -18,5 +18,17 @@ function playRound(playerSelection, computerSelection) {
         } else {
             console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
         }
+    } else if (playerSelection.toLowerCase() === "paper") {
+        if (computerSelection === "scissor") {
+            console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
+        } else {
+            console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
+        }
+    } else if (playerSelection.toLowerCase() === "scissor") {
+        if (computerSelection === "rock") {
+            console.log(`You Lose! ${computerSelection} beats ${playerSelection}!`);
+        } else {
+            console.log(`You Win! ${playerSelection} beats ${computerSelection}!`)
+        }
     }
 }
