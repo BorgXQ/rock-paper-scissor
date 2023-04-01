@@ -33,8 +33,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log("Hello, world");
-
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
