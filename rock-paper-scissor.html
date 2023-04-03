@@ -44,6 +44,7 @@
 
         function game() {
             for (let i = 0; i < 5; i++) {
+                const computerSelection = getComputerChoice();
                 let playerSelection;
                 while (playerSelection.toLowerCase != "rock" || playerSelection.toLowerCase != "paper" || playerSelection.toLowerCase != "scissor") {
                     playerSelection = prompt("Enter rock, paper, or scissor!");
