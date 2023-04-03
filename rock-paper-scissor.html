@@ -48,8 +48,9 @@
                 let playerSelection;
                 do {
                     playerSelection = prompt("Enter rock, paper, or scissor!");
+                    playerSelection = playerSelection.toLowerCase();
                 }
-                while (playerSelection.toLowerCase() != "rock" || playerSelection.toLowerCase() != "paper" || playerSelection.toLowerCase() != "scissor")
+                while (playerSelection != "rock" || playerSelection != "paper" || playerSelection != "scissor")
                 playRound(playerSelection, computerSelection);
             }
         }
