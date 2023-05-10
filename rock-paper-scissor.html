@@ -6,56 +6,11 @@
     <title>Rock, Paper, Scissor</title>
 </head>
 <body>
-    <script>
-        function getComputerChoice() {
-            let choice = Math.floor(Math.random() * 3 + 1);
-            if (choice === 1) {
-                return "rock";
-            } else if (choice === 2) {
-                return "paper";
-            } else {
-                return "scissor";
-            }
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection === computerSelection) {
-                return "It's a draw!";
-            } else if (playerSelection === "rock") {
-                if (computerSelection === "paper") {
-                    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-                } else {
-                    return `You Win! ${playerSelection} beats ${computerSelection}!`;
-                }
-            } else if (playerSelection === "paper") {
-                if (computerSelection === "scissor") {
-                    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-                } else {
-                    return `You Win! ${playerSelection} beats ${computerSelection}!`;
-                }
-            } else if (playerSelection === "scissor") {
-                if (computerSelection === "rock") {
-                    return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-                } else {
-                    return `You Win! ${playerSelection} beats ${computerSelection}!`;
-                }
-            }
-        }
-
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                const computerSelection = getComputerChoice();
-                let playerSelection;
-                do {
-                    playerSelection = prompt("Enter rock, paper, or scissor!");
-                    playerSelection = playerSelection.toLowerCase();
-                }
-                while (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissor")
-                playRound(playerSelection, computerSelection);
-            }
-        }
-
-        console.log(game());
-    </script>
+    <h1>ROCK, PAPER, SCISSOR</h1>
+    <div class="choice">
+        <button>ROCK</button>
+        <button>PAPER</button>
+        <button>SCISSOR</button>
+    </div>
 </body>
 </html>
