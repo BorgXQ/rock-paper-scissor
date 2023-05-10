@@ -10,29 +10,60 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection.toLowerCase() === computerSelection) {
-        return "It's a draw!";
-    } else if (playerSelection.toLowerCase() === "rock") {
-        if (computerSelection === "paper") {
-            return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-        } else {
-            return `You Win! ${playerSelection} beats ${computerSelection}!`;
-        }
-    } else if (playerSelection.toLowerCase() === "paper") {
-        if (computerSelection === "scissor") {
-            return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-        } else {
-            return `You Win! ${playerSelection} beats ${computerSelection}!`;
-        }
-    } else if (playerSelection.toLowerCase() === "scissor") {
-        if (computerSelection === "rock") {
-            return `You Lose! ${computerSelection} beats ${playerSelection}!`;
-        } else {
-            return `You Win! ${playerSelection} beats ${computerSelection}!`;
-        }
+    if (playerSelection === computerSelection) {
+        roundWinner = 'tie';
     }
+    if (
+    (playerSelection === "rock" && computerSelection === "scissor") ||
+    (playerSelection === "scissor" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "rock")) {
+        playerScore++;
+        roundWinner = 'player';
+    }
+    if (
+    (playerSelection === "rock" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "scissor") ||
+    (playerSelection === "scissor" && computerSelection === "rock")) {
+        computerScore++;
+        roundWinner = 'computer'
+    }
+
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+function handleClick(playerSelection) {
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection)
+    updateScore()
+}
+
+function updateScore() {
+    if (roundWinner === 'tie') {
+        extraText.textContent = "Draw."
+    } else if (roundWinner === 'player') {
+        extraText.textContent = "Victory."
+    } else if (roundWinner === 'computer') {
+        extraText.textContent = "Defeat."
+    }
+    
+    pscore.textContent = `${playerScore}`
+    cscore.textContent = `${computerScore}`
+}
+
+let playerScore = 0;
+let computerScore = 0;
+let roundWinner = '';
+
+const brock = document.getElementById('brock');
+const bpaper = document.getElementById('bpaper');
+const bscissor = document.getElementById('bscissor');
+const pscore = document.getElementById('pscore');
+const cscore = document.getElementById('cscore');
+const extraText = document.getElementById('extraText');
+
+pscore.textContent = playerScore;
+cscore.textContent = computerScore;
+extraText.textContent = '';
+
+brock.addEventListener('click', () => handleClick('rock'));
+bpaper.addEventListener('click', () => handleClick('paper'));
+bscissor.addEventListener('click', () => handleClick('scissor'));
