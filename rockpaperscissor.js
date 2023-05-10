@@ -44,7 +44,7 @@ function updateScore() {
     } else if (roundWinner === 'computer') {
         extraText.textContent = "Defeat."
     }
-    
+
     pscore.textContent = `${playerScore}`
     cscore.textContent = `${computerScore}`
 }
