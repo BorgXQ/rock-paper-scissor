@@ -6,3 +6,8 @@ body {
     flex-direction: column;
 }
 
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 3vw;
+}
