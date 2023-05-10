@@ -10,6 +10,25 @@ h1 {
     color: #ffffff;
     text-align: center;
     font-size: 3vw;
+    margin-bottom: 56px;
+}
+
+.scoreboard {
+    display: flex;
+    color: #ffffff;
+    justify-content: center;
+    font-size: 2vw;
+    gap: 256px;
+    margin-bottom: 256px;
+}
+
+.score {
+    font-size: 8vw;
+}
+
+.score,
+.player {
+    text-align: center;
 }
 
 .weapon {
