@@ -12,15 +12,21 @@ h1 {
     font-size: 3vw;
 }
 
+.choice {
+    text-align: center;
+}
+
 button {
   appearance: none;
   background-color: transparent;
   border-width: 0;
   box-sizing: border-box;
-  height: 56px;
+  height: 112px;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1em;
